@@ -18,6 +18,7 @@ Route::middleware('auth:sanctum')->group(function () {
     // Booking Routes
     Route::post('/bookings', [BookingController::class, 'createBooking']);
     Route::get('/my-bookings', [BookingController::class, 'getMyBookings']);
+    Route::put('/bookings/{id}/status', [BookingController::class, 'updateStatus']); // 🚀 IDINAGDAG: Endpoint para sa 7-Step workflow tracking!
     
     Route::get('/user', function (Request $request) {
         return $request->user();
